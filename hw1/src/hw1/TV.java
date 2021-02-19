@@ -119,6 +119,8 @@ public class TV {
 	 */
 	public void resetStart(int givenStart) {
 		//channel = Math.min(givenStart, start + numChannels - 1);
+		start =givenStart;
+		previousChannel=givenStart;
 		int newRange = Math.min(givenStart, givenStart + numChannels - 1);
 		channel = Math.max(givenStart, newRange);
 	}
@@ -130,8 +132,11 @@ public class TV {
 	 */
 	public void resetNumChannels(int givenNumChannels) {
 		//previousChannel = channel;
-		int newRange = Math.max(start, start + givenNumChannels - 1);
-		channel = Math.min(channel, newRange);
+		maxChannels=givenNumChannels + start -1;
+		numChannels=givenNumChannels;
+		//int newRange = Math.max(start, start + numChannels - 1);
+		channel = Math.min(channel,start + givenNumChannels -1);
+		previousChannel = Math.min(channel,start + givenNumChannels -1);
 		 //numChannels = Math.min(start, start + givenNumChannels - 1);
 
 	}
