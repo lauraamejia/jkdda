@@ -121,8 +121,8 @@ public class TV {
 		//channel = Math.min(givenStart, start + numChannels - 1);
 		start =givenStart;
 		previousChannel=givenStart;
-		int newRange = Math.min(givenStart, givenStart + numChannels - 1);
-		channel = Math.max(givenStart, newRange);
+		int newRange = Math.max(givenStart, givenStart + numChannels - 1);
+		channel = Math.min(givenStart, newRange);
 	}
 
 	/**
